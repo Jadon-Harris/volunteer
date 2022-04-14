@@ -1,0 +1,13 @@
+<view class="container">
+    <view class='searchView'>
+        <input class="input" type='text' placeholder='搜索项目、团体' bindinput='input' bindconfirm='confirm' />
+        <icon type='search' class='icons' />
+    </view>
+    <view class="swiperView">
+        <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" circular="true">
+            <swiper-item wx:for="{{swiperImages}}" wx:key="*this">
+                <image class="swiperImage" src="{{item}}" mode="scaleToFill"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

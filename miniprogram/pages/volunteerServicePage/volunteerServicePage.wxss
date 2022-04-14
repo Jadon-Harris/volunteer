@@ -1,0 +1,44 @@
+/* pages/volunteerServicePage/volunteerServicePage.wxss */
+page {
+    background: linear-gradient(to bottom, #1296db, white);
+}
+
+.searchView {
+    width: 100%;
+    align-items: center;
+}
+
+.input {
+    padding-left: 24rpx;
+    margin-top: 24rpx;
+    margin-left: 56rpx;
+    margin-right: 56rpx;
+    border-radius: 24rpx;
+    height: 60rpx;
+    background-color: white;
+}
+
+.icons {
+    position: absolute;
+    top: 36rpx;
+    right: 68rpx;
+}
+
+.swiperView {
+    width: 100%;
+    align-self: center;
+}
+
+.swiper {
+    margin-top: 24rpx;
+    margin-left: 56rpx;
+    margin-right: 56rpx;
+    border-radius: 24rpx;
+    overflow: hidden;
+}
+
+.swiperImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 24rpx;
+}
