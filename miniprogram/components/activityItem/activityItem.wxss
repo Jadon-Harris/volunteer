@@ -1,0 +1,110 @@
+.itemView {
+  display: flex;
+  flex-direction: column;
+  height: 180rpx;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+  border-bottom: 4rpx solid #afb3b8;
+}
+
+.nameAndStateView {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 16rpx 0rpx 0rpx 0rpx;
+  align-items: center;
+}
+
+.nameView {
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  width: 80%;
+}
+
+.stateView {
+  position: absolute;
+  right: 24rpx;
+  bottom: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30rpx;
+  width: 80rpx;
+  border: 4rpx solid #1296db;
+  border-radius: 32rpx;
+}
+
+.state {
+  font-size: 20rpx;
+  color: #1296db;
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.addressAndrecruitView {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.addressView {
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.recruit {
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  margin: 8rpx 0 0 0;
+}
+
+.recruitPlanView {
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  height: 40rpx;
+}
+
+.recruitedView {
+  margin: 0rpx 0rpx 0rpx 24rpx;
+  height: 40rpx;
+}
+
+.timeAndDistanceView {
+  width: 30%;
+  font-size: 24rpx;
+}
+
+.timeView {
+  text-align: right;
+  margin: 0rpx 24rpx 0rpx 0rpx;
+}
+
+.distanceAndImageView {
+  display: flex;
+  flex-direction: row;
+}
+
+.positionImageView {
+  width: 60%;
+  height: 40rpx;
+}
+
+.positionImage {
+  display: inline;
+  float: right;
+  margin-top: 12rpx;
+  margin-right: 4rpx;
+  height: 24rpx;
+  width: 24rpx;
+}
+
+.distanceView {
+  margin: 8rpx 24rpx 0rpx 0rpx;
+  width: fit-content;
+  text-align: right;
+}

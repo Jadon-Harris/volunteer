@@ -1,6 +1,9 @@
 /* pages/volunteerServicePage/volunteerServicePage.wxss */
-page {
-    background: linear-gradient(to bottom, #1296db, white);
+.pageContainer {
+    background: linear-gradient(to bottom, #1296db, white, black);
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .searchView {
@@ -11,17 +14,25 @@ page {
 .input {
     padding-left: 24rpx;
     margin-top: 24rpx;
-    margin-left: 56rpx;
-    margin-right: 56rpx;
+    margin-left: 32rpx;
+    margin-right: 32rpx;
     border-radius: 24rpx;
     height: 60rpx;
     background-color: white;
 }
 
-.icons {
+.searchImageView{
     position: absolute;
-    top: 36rpx;
-    right: 68rpx;
+    height: 64rpx;
+    width: 64rpx;
+    top: 32rpx;
+    right: 32rpx;
+    z-index: 999;
+}
+
+.searchImage{
+    height: 48rpx;
+    width: 48rpx;
 }
 
 .swiperView {
@@ -31,8 +42,8 @@ page {
 
 .swiper {
     margin-top: 24rpx;
-    margin-left: 56rpx;
-    margin-right: 56rpx;
+    margin-left: 32rpx;
+    margin-right: 32rpx;
     border-radius: 24rpx;
     overflow: hidden;
 }
@@ -41,4 +52,25 @@ page {
     width: 100%;
     height: 100%;
     border-radius: 24rpx;
+}
+
+.activitiesView {
+    border-radius: 24rpx 24rpx 0 0;
+    margin-top: 24rpx;
+    background-color: white;
+}
+
+.selectView {
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3rpx solid #b7b9bb;
+}
+
+.activitiesScrollView {
+    height: calc(100vh - 464rpx);
+}
+
+.activityName {
+    font-size: 64rpx;
 }

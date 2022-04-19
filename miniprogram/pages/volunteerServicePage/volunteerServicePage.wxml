@@ -1,7 +1,10 @@
-<view class="container">
+<view class="pageContainer">
     <view class='searchView'>
-        <input class="input" type='text' placeholder='搜索项目、团体' bindinput='input' bindconfirm='confirm' />
-        <icon type='search' class='icons' />
+        <input class="input" type='text' placeholder='搜索活动名称或地址' model:value="{{searchContent}}" confirm-type="search" bindinput="input" bindconfirm='inputConfirm' bindblur="blur" />
+        <!-- <icon type='search' class='icons' bindtap="inputConfirm" /> -->
+        <view class="searchImageView" >
+            <image class="searchImage" src="../../images/search/search.png" mode="scaleToFill" catchtap="inputConfirm"></image>
+        </view>
     </view>
     <view class="swiperView">
         <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" circular="true">
@@ -9,5 +12,11 @@
                 <image class="swiperImage" src="{{item}}" mode="scaleToFill"></image>
             </swiper-item>
         </swiper>
+    </view>
+    <view class="activitiesView">
+        <activitiesSorter class="activitiesSorter" bind:timeSortType="timeViewTap" bind:positionSortType="positionViewTap"></activitiesSorter>
+        <scroll-view scroll-y="true" class="activitiesScrollView">
+            <activityItem wx:for="{{activitiesJson}}" wx:for-index="activitiesJsonIndex" wx:key="_id" activity="{{activitiesJson[activitiesJsonIndex]}}"></activityItem>
+        </scroll-view>
     </view>
 </view>

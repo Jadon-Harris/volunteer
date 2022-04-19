@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "activitiesSorter": "../../components/activitiesSorter/activitiesSorter",
+    "activityItem": "../../components/activityItem/activityItem"
+  }
 }

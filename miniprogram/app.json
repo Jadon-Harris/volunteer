@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/volunteerServicePage/volunteerServicePage",
+    "pages/testPage/testPage",
     "pages/user/user"
   ],
   "tabBar": {
@@ -10,16 +11,17 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/volunteerServicePage/volunteerServicePage",
-        "iconPath": "images/service.png",
-        "selectedIconPath": "images/service_HL.png",
+        "iconPath": "images/tabBar/service.png",
+        "selectedIconPath": "images/tabBar/service_HL.png",
         "text": "志愿服务"
       },
       {
         "pagePath": "pages/user/user",
-        "iconPath": "images/user.png",
-        "selectedIconPath": "images/user_HL.png",
+        "iconPath": "images/tabBar/user.png",
+        "selectedIconPath": "images/tabBar/user_HL.png",
         "text": "我的"
       }
     ]

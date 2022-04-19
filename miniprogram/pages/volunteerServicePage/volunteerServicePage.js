@@ -1,15 +1,123 @@
 // pages/volunteerServicePage/volunteerServicePage.js
+import activityStorage from "../../services/activityStorage";
 var volunteerServicePage = null;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // swiper中图片的路径
     swiperImages: [
       "../../images/swiper/swiperImage1.jpg",
       "../../images/swiper/swiperImage2.jpg"
-    ]
+    ],
+    // 从数据库中查询出的数据
+    activities: [],
+    // 用于传递给activityItem组件的数据
+    activitiesJson: [],
+    // 用户输入的搜索条件
+    searchContent: "",
+  },
+
+  timeViewTap: function (event) {
+    const activitiesSorter = this.selectComponent(".activitiesSorter");
+    if (activitiesSorter.data.positionSortUpOrDown != null) {
+      activitiesSorter.setData({
+        positionSortUpOrDown: null
+      })
+    }
+
+    var temp = this.data.activitiesJson;
+    if (event.detail.value == "down") {
+      temp.sort(function (a, b) {
+        return b.time < a.time ? 1 : -1
+      })
+    } else if (event.detail.value == "up") {
+      temp.sort(function (a, b) {
+        return b.time < a.time ? -1 : 1
+      })
+    }
+    this.setData({
+      activitiesJson: temp
+    })
+  },
+  positionViewTap: function (event) {
+    const activitiesSorter = this.selectComponent(".activitiesSorter");
+    if (activitiesSorter.data.timeSortUpOrDown != null) {
+      activitiesSorter.setData({
+        timeSortUpOrDown: null
+      })
+    }
+
+    // TODO 后面距离需要更改
+    var temp = this.data.activitiesJson;
+
+    if (event.detail.value == "down") {
+      temp.sort(function (a, b) {
+        return b.distance < a.distance ? 1 : -1
+      })
+    } else if (event.detail.value == "up") {
+      temp.sort(function (a, b) {
+        return b.distance < a.distance ? -1 : 1
+      })
+    }
+    this.setData({
+      activitiesJson: temp
+    })
+  },
+
+  inputConfirm: function () {
+    activityStorage.searchActivities(this.data.searchContent, function (data) {
+      volunteerServicePage.setData({
+        activities: data,
+      });
+      var temp = JSON.parse(JSON.stringify(data));
+      temp.forEach(activityJson => {
+        // TODO 求距离
+        activityJson["distance"] = Math.round(Math.random() * 100);
+        activityJson = JSON.stringify(activityJson)
+      })
+      volunteerServicePage.setData({
+        activitiesJson: temp
+      });
+      const activitiesSorter = volunteerServicePage.selectComponent(".activitiesSorter");
+      activitiesSorter.setData({
+        timeSortUpOrDown: null,
+        positionSortUpOrDown: null
+      })
+    })
+  },
+
+  input: function (event) {
+    this.setData({
+      searchContent: event.detail.value
+    })
+  },
+
+  blur: function () {
+    if (this.data.searchContent == '') {
+      activityStorage.getAllActivities(function (data) {
+        volunteerServicePage.setData({
+          activities: data,
+        });
+        var temp = JSON.parse(JSON.stringify(data));
+        temp.forEach(activityJson => {
+          // TODO 求距离
+          activityJson["distance"] = Math.round(Math.random() * 100);
+          activityJson = JSON.stringify(activityJson)
+        })
+        volunteerServicePage.setData({
+          activitiesJson: temp
+        });
+      });
+      const activitiesSorter = this.selectComponent(".activitiesSorter");
+      activitiesSorter.setData({
+        timeSortUpOrDown: null,
+        positionSortUpOrDown: null
+      })
+    }
   },
 
   /**
@@ -17,6 +125,21 @@ Page({
    */
   onLoad: function (options) {
     volunteerServicePage = this;
+    activityStorage.getAllActivities(function (data) {
+      volunteerServicePage.setData({
+        activities: data,
+      });
+      var temp = JSON.parse(JSON.stringify(data));
+      temp.forEach(activityJson => {
+        // TODO 求距离
+        activityJson["distance"] = Math.round(Math.random() * 100);
+        activityJson = JSON.stringify(activityJson)
+      })
+      volunteerServicePage.setData({
+        activitiesJson: temp
+      });
+    });
+
   },
 
   /**

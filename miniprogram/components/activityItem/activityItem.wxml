@@ -1,0 +1,26 @@
+<view class="itemView">
+  <view class="nameAndStateView">
+    <view class="nameView">{{name}}</view>
+    <view class="stateView">
+      <text class="state">{{state}}</text>
+    </view>
+  </view>
+  <view class="detailContainer">
+    <view class="addressAndrecruitView">
+      <view class="addressView">{{address}}</view>
+      <view class="recruit">
+        <view class="recruitPlanView">计划招募: {{recruitPlan}}</view>
+        <view class="recruitedView">已招募: {{recruited}}</view>
+      </view>
+    </view>
+    <view class="timeAndDistanceView">
+      <view class="timeView">{{year}}-{{month}}-{{day}}</view>
+      <view class="distanceAndImageView">
+        <view class="positionImageView">
+          <image class="positionImage" src="../../images/position/position.png"></image>
+        </view>
+        <view class="distanceView">{{distance}}km</view>
+      </view>
+    </view>
+  </view>
+</view>

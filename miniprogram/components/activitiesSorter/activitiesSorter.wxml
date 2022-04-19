@@ -1,0 +1,16 @@
+<view class="selectView">
+  <view class="timeView" bindtap="timeViewTap">
+    <view class="text">时间</view>
+    <view class="imageView">
+      <image class="image" src="{{timeUpArrowImageSrc}}"></image>
+      <image class="image" src="{{timeDownArrowImageSrc}}"></image>
+    </view>
+  </view>
+  <view class="positionView" bindtap="positionViewTap" bindtap="positionViewTap">
+    <view class="text">距离</view>
+    <view class="imageView">
+      <image class="image" src="{{positionUpArrowImageSrc}}"></image>
+      <image class="image" src="{{positionDownArrowImageSrc}}"></image>
+    </view>
+  </view>
+</view>
