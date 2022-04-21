@@ -16,7 +16,7 @@
     <view class="activitiesView">
         <activitiesSorter class="activitiesSorter" bind:timeSortType="timeViewTap" bind:positionSortType="positionViewTap"></activitiesSorter>
         <scroll-view scroll-y="true" class="activitiesScrollView">
-            <activityItem wx:for="{{activitiesJson}}" wx:for-index="activitiesJsonIndex" wx:key="_id" activity="{{activitiesJson[activitiesJsonIndex]}}"></activityItem>
+            <activityItem wx:for="{{activities}}" wx:for-index="activityIndex" wx:key="_id" activity="{{activities[activityIndex]}}"></activityItem>
         </scroll-view>
     </view>
 </view>

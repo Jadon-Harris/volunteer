@@ -15,8 +15,6 @@ Page({
     ],
     // 从数据库中查询出的数据
     activities: [],
-    // 用于传递给activityItem组件的数据
-    activitiesJson: [],
     // 用户输入的搜索条件
     searchContent: "",
   },
@@ -29,10 +27,10 @@ Page({
       })
     }
 
-    var temp = this.data.activitiesJson;
+    var temp = this.data.activities;
     if (event.detail.value == "down") {
       temp.sort(function (a, b) {
-        return b.time < a.time ? 1 : -1
+        return b.time <= a.time ? 1 : -1
       })
     } else if (event.detail.value == "up") {
       temp.sort(function (a, b) {
@@ -40,9 +38,10 @@ Page({
       })
     }
     this.setData({
-      activitiesJson: temp
+      activities: temp
     })
   },
+
   positionViewTap: function (event) {
     const activitiesSorter = this.selectComponent(".activitiesSorter");
     if (activitiesSorter.data.timeSortUpOrDown != null) {
@@ -52,11 +51,11 @@ Page({
     }
 
     // TODO 后面距离需要更改
-    var temp = this.data.activitiesJson;
+    var temp = this.data.activities;
 
     if (event.detail.value == "down") {
       temp.sort(function (a, b) {
-        return b.distance < a.distance ? 1 : -1
+        return b.distance <= a.distance ? 1 : -1
       })
     } else if (event.detail.value == "up") {
       temp.sort(function (a, b) {
@@ -64,23 +63,20 @@ Page({
       })
     }
     this.setData({
-      activitiesJson: temp
+      activities: temp
     })
   },
 
   inputConfirm: function () {
     activityStorage.searchActivities(this.data.searchContent, function (data) {
-      volunteerServicePage.setData({
-        activities: data,
-      });
-      var temp = JSON.parse(JSON.stringify(data));
-      temp.forEach(activityJson => {
+      var res = JSON.parse(JSON.stringify(data))
+      res.forEach(activity => {
         // TODO 求距离
-        activityJson["distance"] = Math.round(Math.random() * 100);
-        activityJson = JSON.stringify(activityJson)
+        activity["distance"] = Math.round(Math.random() * 100);
+        activity = JSON.stringify(activity)
       })
       volunteerServicePage.setData({
-        activitiesJson: temp
+        activities: res,
       });
       const activitiesSorter = volunteerServicePage.selectComponent(".activitiesSorter");
       activitiesSorter.setData({
@@ -99,17 +95,14 @@ Page({
   blur: function () {
     if (this.data.searchContent == '') {
       activityStorage.getAllActivities(function (data) {
-        volunteerServicePage.setData({
-          activities: data,
-        });
-        var temp = JSON.parse(JSON.stringify(data));
-        temp.forEach(activityJson => {
+        var res = JSON.parse(JSON.stringify(data));
+        res.forEach(activity => {
           // TODO 求距离
-          activityJson["distance"] = Math.round(Math.random() * 100);
-          activityJson = JSON.stringify(activityJson)
+          activity["distance"] = Math.round(Math.random() * 100);
+          activity = JSON.stringify(activity)
         })
         volunteerServicePage.setData({
-          activitiesJson: temp
+          activities: res,
         });
       });
       const activitiesSorter = this.selectComponent(".activitiesSorter");
@@ -126,20 +119,16 @@ Page({
   onLoad: function (options) {
     volunteerServicePage = this;
     activityStorage.getAllActivities(function (data) {
-      volunteerServicePage.setData({
-        activities: data,
-      });
-      var temp = JSON.parse(JSON.stringify(data));
-      temp.forEach(activityJson => {
+      var res = JSON.parse(JSON.stringify(data));
+      res.forEach(activity => {
         // TODO 求距离
-        activityJson["distance"] = Math.round(Math.random() * 100);
-        activityJson = JSON.stringify(activityJson)
+        activity["distance"] = Math.round(Math.random() * 100);
+        activity = JSON.stringify(activity)
       })
       volunteerServicePage.setData({
-        activitiesJson: temp
+        activities: res,
       });
     });
-
   },
 
   /**
