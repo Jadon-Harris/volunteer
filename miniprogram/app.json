@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/volunteerServicePage/volunteerServicePage",
     "pages/testPage/testPage",
+    "pages/volunteerServicePage/volunteerServicePage",
     "pages/user/user",
     "pages/addActivity/addActivity"
   ],
@@ -12,8 +12,7 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/volunteerServicePage/volunteerServicePage",
         "iconPath": "images/tabBar/service.png",
         "selectedIconPath": "images/tabBar/service_HL.png",
@@ -35,5 +34,10 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息用于获取距离信息"
+    }
+  }
 }
