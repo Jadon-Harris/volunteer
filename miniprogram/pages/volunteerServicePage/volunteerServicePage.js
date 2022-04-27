@@ -113,6 +113,41 @@ Page({
     }
   },
 
+  filter: function (event) {
+    var where = JSON.stringify(event.detail)
+    activityStorage.getActivitiesByContidion(where, function (data) {
+      if (data.length == 0) {
+        wx.showToast({
+          title: '无相关结果',
+          icon: 'error',
+          duration: 2000
+        })
+      } else {
+        var res = JSON.parse(JSON.stringify(data));
+        res.forEach(activity => {
+          // TODO 求距离
+          activity["distance"] = Math.round(Math.random() * 100);
+          activity = JSON.stringify(activity)
+        })
+        volunteerServicePage.setData({
+          activities: res,
+        });
+
+      }
+    })
+    const activitiesSorter = this.selectComponent(".activitiesSorter");
+    activitiesSorter.setData({
+      timeSortUpOrDown: null,
+      positionSortUpOrDown: null
+    })
+  },
+
+  add: function () {
+    wx.navigateTo({
+      url: '../addActivity/addActivity',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

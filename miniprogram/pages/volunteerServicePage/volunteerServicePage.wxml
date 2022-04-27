@@ -1,9 +1,11 @@
 <view class="pageContainer">
     <view class='searchView'>
         <input class="input" type='text' placeholder='搜索活动名称或地址' model:value="{{searchContent}}" confirm-type="search" bindinput="input" bindconfirm='inputConfirm' bindblur="blur" />
-        <!-- <icon type='search' class='icons' bindtap="inputConfirm" /> -->
-        <view class="searchImageView" >
+        <view class="searchImageView">
             <image class="searchImage" src="../../images/search/search.png" mode="scaleToFill" catchtap="inputConfirm"></image>
+        </view>
+        <view class="add" bindtap="add">
+            <image src="../../images/add/add.png" mode="aspectFit"></image>
         </view>
     </view>
     <view class="swiperView">
@@ -14,7 +16,7 @@
         </swiper>
     </view>
     <view class="activitiesView">
-        <activitiesSorter class="activitiesSorter" bind:timeSortType="timeViewTap" bind:positionSortType="positionViewTap"></activitiesSorter>
+        <activitiesSorter class="activitiesSorter" bind:filter="filter" bind:timeSortType="timeViewTap" bind:positionSortType="positionViewTap"></activitiesSorter>
         <scroll-view scroll-y="true" class="activitiesScrollView">
             <activityItem wx:for="{{activities}}" wx:for-index="activityIndex" wx:key="_id" activity="{{activities[activityIndex]}}"></activityItem>
         </scroll-view>

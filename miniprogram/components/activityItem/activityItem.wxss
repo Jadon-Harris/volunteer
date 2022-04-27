@@ -29,8 +29,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
   height: 30rpx;
-  width: 80rpx;
+  width: fit-content;
   border: 4rpx solid #1296db;
   border-radius: 32rpx;
 }

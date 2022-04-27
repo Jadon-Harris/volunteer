@@ -15,19 +15,43 @@
     padding-left: 24rpx;
     margin-top: 24rpx;
     margin-left: 32rpx;
-    margin-right: 32rpx;
+    margin-right: 100rpx;
     border-radius: 24rpx;
     height: 60rpx;
     background-color: white;
 }
 
 .searchImageView{
-    position: absolute;
+    position: fixed;
     height: 64rpx;
     width: 64rpx;
     top: 32rpx;
+    right: 100rpx;
+    z-index: 997;
+}
+
+.add{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    height: 60rpx;
+    width: 60rpx;
+    font-size: 48rpx;
+    font-weight: 700;
+    height: 64rpx;
+    top: 24rpx;
     right: 32rpx;
-    z-index: 999;
+    border-radius: 90rpx;
+}
+
+.add image{
+    position: fixed;
+    border-radius: 90rpx;
+    top: 24rpx;
+    right: 32rpx;
+    height: 64rpx;
+    width: 64rpx;
 }
 
 .searchImage{

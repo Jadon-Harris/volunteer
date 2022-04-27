@@ -6,6 +6,7 @@
   border-bottom: 3rpx solid #7A7E83;
 }
 
+
 .timeView {
   margin-left: 48rpx;
   position: relative;
@@ -35,4 +36,99 @@
 .image {
   height: 18rpx;
   width: 18rpx;
+}
+
+.filterView{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: fit-content;
+  right: 48rpx;
+}
+
+.filterText{
+  color: #7A7E83;
+}
+
+.filterImage{
+  height: 38rpx;
+  width: 38rpx;
+  margin-right: 4rpx;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500rpx;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.title {
+  margin-top: 24rpx;
+  margin-left: 32rpx;
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+
+.buttonView {
+  margin-top: 24rpx;
+  margin-left: 32rpx;
+}
+
+.buttonView view {
+  display: inline-block;
+  width: fit-content;
+  padding: 10rpx;
+  margin-right: 24rpx;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  font-weight: initial;
+  border-radius: 24rpx;
+  border: 4rpx solid #1296db;
+}
+
+.selected{
+  background-color: #1296db;
+}
+
+.bottom {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0rpx;
+  width: 100%;
+}
+
+.bottom .bottomButtonView {
+  width: 50%;
+}
+
+.bottom .bottomButtonView .clearButton {
+  margin: 0, 0, 0, 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.bottom .bottomButtonView .selectButton {
+  margin: 0, 0, 0, 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: #1296db;
+  color: white;
 }

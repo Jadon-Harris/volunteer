@@ -39,6 +39,31 @@ var activityStorage = {
         callback(result.data)
       }
     })
+  },
+
+  /**
+   * 获取所有活动状态。
+   * @param {Function} callback 回调函数
+   */
+  getAllActivityStates: function (callback) {
+    wx.cloud.callFunction({
+      name: "getAllActivityStates"
+    }).then(res => {
+      callback(res.result.list[0].states)
+    })
+  },
+
+  /**
+   * 根据筛选中的条件进行查询。
+   * @param {String} where 查询条件。
+   * @param {Function} callback 回调函数。
+   */
+  getActivitiesByContidion: function (where, callback) {
+    db.collection("activity").where(where).get({
+      success: function (result) {
+        callback(result.data)
+      }
+    })
   }
 };
 

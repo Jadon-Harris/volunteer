@@ -1,19 +1,7 @@
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+/* components/selectPage/selectPage.wxss */
+.page{
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.content {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 500rpx;
-  height: 100%;
-  background: #fff;
+  width: 75%;
 }
 
 .title {

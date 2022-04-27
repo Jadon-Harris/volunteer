@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="typeView">
+    <view class="title">活动类别</view>
+    <view class="buttonView">
+      <button class="typeButton" wx:for="{{typeList}}" wx:key="_id" wx:for-index="typeIndex">{{typeList[typeIndex].name}}</button>
+    </view>
+  </view>
+  <view class="stateView">
+    <view class="title">活动状态</view>
+    <view class="buttonView">
+      <button class="stateButton" wx:for="{{stateList}}" wx:key="*this" wx:for-index="stateIndex">{{stateList[stateIndex]}}</button>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="bottomButtonView">
+      <button class="clearButton">重置</button>
+    </view>
+    <view class="bottomButtonView">
+      <button class="selectButton">筛选</button>
+    </view>
+  </view>
+</view>

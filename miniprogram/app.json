@@ -2,7 +2,8 @@
   "pages": [
     "pages/volunteerServicePage/volunteerServicePage",
     "pages/testPage/testPage",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/addActivity/addActivity"
   ],
   "tabBar": {
     "custom": false,
