@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/addActivity/addActivity",
     "pages/testPage/testPage",
     "pages/volunteerServicePage/volunteerServicePage",
-    "pages/user/user",
-    "pages/addActivity/addActivity"
+    "pages/user/user"
   ],
   "tabBar": {
     "custom": false,

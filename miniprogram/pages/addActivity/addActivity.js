@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    date: '请选择活动时间',
+    address: '请选择活动地址',
+    managerName:'',
+    managerPhone:''
   },
 
   /**

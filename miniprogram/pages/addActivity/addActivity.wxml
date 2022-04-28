@@ -1,2 +1,30 @@
-<!--pages/addActivity/addActivity.wxml-->
-<text>pages/addActivity/addActivity.wxml</text>
+<view class="page">
+  <view class="info">
+    <view class="nameView">
+      <view class="title">活动名称</view>
+      <input placeholder="请输入活动名称"></input>
+    </view>
+    <view class="timeView">
+      <view class="title">活动时间</view>
+      <picker mode="date" value="{{date}}">
+        <view class="date">{{date}}</view>
+      </picker>
+    </view>
+    <view class="addressView">
+      <view class="title">活动地址</view>
+      <view class="address">{{address}}</view>
+    </view>
+    <view class="managerView">
+      <view class="title">联系人</view>
+      <input placeholder="请输入联系人姓名" confirm-type="done">{{managerName}}</input>
+      <input placeholder="请输入联系电话" type="number" confirm-type="done">{{managerPhone}}</input>
+    </view>
+    <view class="organizerView">
+      <view class="title">{{organizer}}</view>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="title">活动详情</view>
+    <textarea></textarea>
+  </view>
+</view>
