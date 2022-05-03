@@ -22,9 +22,12 @@
     <view class="organizerView">
       <view class="title">{{organizer}}</view>
     </view>
+    <view class="detailView">
+      <view class="title">活动详情</view>
+      <textarea></textarea>
+    </view>
   </view>
-  <view class="detail">
-    <view class="title">活动详情</view>
-    <textarea></textarea>
+  <view class="buttonView">
+    <button>新建</button>
   </view>
 </view>

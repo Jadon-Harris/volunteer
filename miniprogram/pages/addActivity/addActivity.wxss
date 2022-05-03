@@ -1,1 +1,48 @@
-/* pages/addActivity/addActivity.wxss */
+.page {
+  background: linear-gradient(to bottom, #1296db, white);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 24rpx;
+  margin-top: 24rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  opacity: 0.9;
+}
+
+.nameView,.timeView,.addressView,.managerView,.organizerView,.detailView{
+  margin-top: 16rpx;
+  margin-left: 16rpx;
+}
+
+.title{
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+
+.buttonView{
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 140rpx;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+  box-shadow: 0rpx -4rpx 16rpx 2rpx #888888;
+}
+
+.buttonView button{
+  border-radius: 24rpx;
+  width: 70%;
+  background-color: #1296db;
+  color: white;
+  
+}
