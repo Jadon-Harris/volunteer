@@ -15,11 +15,19 @@
     </view>
     <view class="timeAndDistanceView">
       <view class="timeView">{{year}}-{{month}}-{{day}}</view>
-      <view class="distanceAndImageView">
-        <view class="positionImageView">
-          <image class="positionImage" src="../../images/position/position.png"></image>
+      <view class="distanceCreditAndImageView">
+        <view class="credit">
+          <view class="creditImageView">
+            <image class="iconImage" src="../../images/coin/coin.png"></image>
+          </view>
+          <view class="creditView">{{credit}}</view>
         </view>
-        <view class="distanceView">{{distance}}km</view>
+        <view class="distance">
+          <view class="positionImageView">
+            <image class="iconImage" src="../../images/position/position.png"></image>
+          </view>
+          <view class="distanceView">{{distance}}km</view>
+        </view>
       </view>
     </view>
   </view>

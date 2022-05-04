@@ -22,7 +22,8 @@ Component({
     year: 0,
     month: 0,
     day: 0,
-    distance: 0
+    distance: 0,
+    credit: 0
   },
 
   /**
@@ -46,7 +47,8 @@ Component({
         month: date.getMonth() + 1,
         day: date.getDate(),
         // 确定距离
-        distance: activity.distance
+        distance: activity.distance,
+        credit:activity.credit
       });
     }
   }
