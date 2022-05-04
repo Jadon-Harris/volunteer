@@ -2,11 +2,11 @@
   <view class="info">
     <view class="nameView">
       <view class="title">活动名称</view>
-      <input placeholder="请输入活动名称"></input>
+      <input placeholder="请输入活动名称" bindinput="inputName"></input>
     </view>
     <view class="timeView">
       <view class="title">活动时间</view>
-      <picker mode="date" value="{{date}}">
+      <picker mode="date" value="{{date}}" bindchange="datepicker">
         <view class="date">{{date}}</view>
       </picker>
     </view>
@@ -14,17 +14,25 @@
       <view class="title">活动地址</view>
       <view class="address">{{address}}</view>
     </view>
+    <view class="creditView">
+      <view class="title">活动积分</view>
+      <picker mode="selector" range="{{pickerRange}}" value="{{index}}" bindchange="creditpicker">
+        <view class="credit">{{credit}}</view>
+      </picker>
+    </view>
     <view class="managerView">
       <view class="title">联系人</view>
-      <input placeholder="请输入联系人姓名" confirm-type="done">{{managerName}}</input>
-      <input placeholder="请输入联系电话" type="number" confirm-type="done">{{managerPhone}}</input>
+      <input placeholder="请输入联系人姓名" confirm-type="done" bindinput="inputManagerName">{{managerName}}</input>
+      <input placeholder="请输入联系电话" type="number" confirm-type="done" bindinput="inputManagerPhone">{{managerPhone}}</input>
     </view>
     <view class="organizerView">
       <view class="title">{{organizer}}</view>
     </view>
     <view class="detailView">
       <view class="title">活动详情</view>
-      <textarea></textarea>
+      <view class="textareaView">
+        <textarea placeholder="请输入活动详情" bindinput="inputDetail">{{detail}}</textarea>
+      </view>
     </view>
   </view>
   <view class="buttonView">

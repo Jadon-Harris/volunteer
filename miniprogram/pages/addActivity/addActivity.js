@@ -1,21 +1,66 @@
 // pages/addActivity/addActivity.js
+var addActivityPage = null;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    name: '',
     date: '请选择活动时间',
     address: '请选择活动地址',
-    managerName:'',
-    managerPhone:''
+    credit: '请选择活动积分',
+    detail: '',
+    pickerRange: [],
+    managerName: '',
+    managerPhone: ''
+  },
+
+  inputName: function (event) {
+    this.setData({
+      name: event.detail.value
+    })
+  },
+
+  datepicker: function (event) {
+    this.setData({
+      date: event.detail.value
+    })
+  },
+
+  creditpicker: function (event) {
+    this.setData({
+      credit: addActivityPage.data.pickerRange[event.detail.value]
+    })
+  },
+
+  inputManagerName: function (event) {
+    this.setData({
+      managerName:event.detail.value
+    })
+  },
+
+  inputManagerPhone: function (event) {
+    this.setData({
+      managerPhone:event.detail.value
+    })
+  },
+
+  inputDetail:function (event) {
+    this.setData({
+      detail:event.detail.value
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    addActivityPage = this;
+    this.setData({
+      pickerRange: Array(30).toString().split(',').map((item, index) => index + 1)
+    })
   },
 
   /**

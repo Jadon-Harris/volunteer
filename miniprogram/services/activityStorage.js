@@ -64,6 +64,28 @@ var activityStorage = {
         callback(result.data)
       }
     })
+  },
+
+  addActivity: function (activity, callback) {
+    db.collection("activity").add({
+      data: {
+        address: activity.address,
+        credit: activity.credit,
+        detail: activity.detail,
+        managername: activity.managername,
+        managerphone: activity.managerphone,
+        name: activity.name,
+        orgainzerid: activity.orgainzerid,
+        recruitPlan: activity.recruitPlan,
+        recruited: activity.recruited,
+        state: activity.state,
+        time: new Date(activity.date),
+        typeid: activity.typeid
+      },
+      success: function (res) {
+        callback()
+      }
+    })
   }
 };
 
