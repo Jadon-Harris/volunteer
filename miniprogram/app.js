@@ -14,6 +14,11 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      userInfo : {
+        'userType':"organizer",
+        '_id':"eb85cafe6257d69000ac632a705600c9"
+      }
+    }
   }
 })

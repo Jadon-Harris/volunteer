@@ -79,7 +79,7 @@ var activityStorage = {
         recruitPlan: activity.recruitPlan,
         recruited: activity.recruited,
         state: activity.state,
-        time: new Date(activity.date),
+        time: activity.time,
         typeid: activity.typeid
       },
       success: function (res) {

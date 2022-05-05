@@ -153,17 +153,6 @@ Page({
    */
   onLoad: function (options) {
     volunteerServicePage = this;
-    activityStorage.getAllActivities(function (data) {
-      var res = JSON.parse(JSON.stringify(data));
-      res.forEach(activity => {
-        // TODO 求距离
-        activity["distance"] = Math.round(Math.random() * 100);
-        activity = JSON.stringify(activity)
-      })
-      volunteerServicePage.setData({
-        activities: res,
-      });
-    });
   },
 
   /**
@@ -177,7 +166,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    activityStorage.getAllActivities(function (data) {
+      var res = JSON.parse(JSON.stringify(data));
+      res.forEach(activity => {
+        // TODO 求距离
+        activity["distance"] = Math.round(Math.random() * 100);
+        activity = JSON.stringify(activity)
+      })
+      volunteerServicePage.setData({
+        activities: res,
+      });
+    });
   },
 
   /**

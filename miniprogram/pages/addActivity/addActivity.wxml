@@ -1,8 +1,8 @@
 <view class="page">
-  <view class="info">
+  <scroll-view class="info" scroll-y="true">
     <view class="nameView">
       <view class="title">活动名称</view>
-      <input placeholder="请输入活动名称" bindinput="inputName"></input>
+      <input placeholder="请输入活动名称" bindinput="inputName" />
     </view>
     <view class="timeView">
       <view class="title">活动时间</view>
@@ -12,7 +12,13 @@
     </view>
     <view class="addressView">
       <view class="title">活动地址</view>
-      <view class="address">{{address}}</view>
+      <view class="address" bindtap="selectAddress">{{address}}</view>
+    </view>
+    <view class="typeView">
+      <view class="title">活动类型</view>
+      <picker mode="selector" range="{{typeRange}}" value="{{index}}" bindchange="typepicker">
+        <view class="type">{{type}}</view>
+      </picker>
     </view>
     <view class="creditView">
       <view class="title">活动积分</view>
@@ -22,20 +28,21 @@
     </view>
     <view class="managerView">
       <view class="title">联系人</view>
-      <input placeholder="请输入联系人姓名" confirm-type="done" bindinput="inputManagerName">{{managerName}}</input>
-      <input placeholder="请输入联系电话" type="number" confirm-type="done" bindinput="inputManagerPhone">{{managerPhone}}</input>
+      <input placeholder="请输入联系人姓名" confirm-type="done" bindinput="inputManagerName" />
+      <input placeholder="请输入联系电话" type="number" confirm-type="done" bindinput="inputManagerPhone" />
     </view>
-    <view class="organizerView">
-      <view class="title">{{organizer}}</view>
+    <view class="recruitView">
+      <view class="title">招募计划</view>
+      <input placeholder="请输入计划招募人数" type="number" confirm-type="done" bindinput="inputRecruitPlan" />
     </view>
     <view class="detailView">
       <view class="title">活动详情</view>
       <view class="textareaView">
-        <textarea placeholder="请输入活动详情" bindinput="inputDetail">{{detail}}</textarea>
+        <textarea placeholder="请输入活动详情" bindinput="inputDetail" ></textarea>
       </view>
     </view>
-  </view>
+  </scroll-view>
   <view class="buttonView">
-    <button>新建</button>
+    <button bindtap="addActivity">新建</button>
   </view>
 </view>

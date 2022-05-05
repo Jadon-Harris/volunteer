@@ -1,5 +1,9 @@
 // pages/addActivity/addActivity.js
 var addActivityPage = null;
+var app = getApp();
+import locationService from '../../services/locationService';
+import activityStorage from '../../services/activityStorage';
+import activityTypeStorage from '../../services/activityTypeStorage';
 
 Page({
 
@@ -10,11 +14,17 @@ Page({
     name: '',
     date: '请选择活动时间',
     address: '请选择活动地址',
+    addressObject: null,
     credit: '请选择活动积分',
     detail: '',
     pickerRange: [],
     managerName: '',
-    managerPhone: ''
+    managerPhone: '',
+    recruitPlan: 0,
+    typeObjectRange: [],
+    typeRange: [],
+    type: '请选择活动类型',
+    typeid: ''
   },
 
   inputName: function (event) {
@@ -29,6 +39,22 @@ Page({
     })
   },
 
+  selectAddress: function () {
+    locationService.chooseLocation(function (res) {
+      addActivityPage.setData({
+        address: res.name,
+        addressObject: res
+      })
+    })
+  },
+
+  typepicker: function (event) {
+    this.setData({
+      type: addActivityPage.data.typeRange[event.detail.value],
+      typeid: addActivityPage.data.typeObjectRange[event.detail.value]._id,
+    })
+  },
+
   creditpicker: function (event) {
     this.setData({
       credit: addActivityPage.data.pickerRange[event.detail.value]
@@ -37,19 +63,49 @@ Page({
 
   inputManagerName: function (event) {
     this.setData({
-      managerName:event.detail.value
+      managerName: event.detail.value
     })
   },
 
   inputManagerPhone: function (event) {
     this.setData({
-      managerPhone:event.detail.value
+      managerPhone: event.detail.value
     })
   },
 
-  inputDetail:function (event) {
+  inputRecruitPlan: function (event) {
     this.setData({
-      detail:event.detail.value
+      recruitPlan: event.detail.value
+    })
+  },
+
+  inputDetail: function (event) {
+    this.setData({
+      detail: event.detail.value
+    })
+  },
+
+  addActivity: function () {
+    var activity = {
+      "name": this.data.name,
+      "typeid": this.data.typeid,
+      "address": this.data.address,
+      "time": new Date(this.data.date),
+      "managername": this.data.managerName,
+      "managerphone": this.data.managerPhone,
+      "detail": this.data.detail,
+      "orgainzerid": app.globalData.userInfo._id,
+      "state": "招募中",
+      "recruitPlan": this.data.recruitPlan,
+      "recruited": 0,
+      "credit": this.data.credit
+    }
+    activityStorage.addActivity(activity, function () {
+      wx.showToast({
+        title: '新建成功',
+        icon: 'success',
+        duration: 2000
+      })
     })
   },
 
@@ -60,6 +116,13 @@ Page({
     addActivityPage = this;
     this.setData({
       pickerRange: Array(30).toString().split(',').map((item, index) => index + 1)
+    })
+    activityTypeStorage.getAllActivityTypes(function (res) {
+      var types = res.map(e => e.name)
+      addActivityPage.setData({
+        typeRange: types,
+        typeObjectRange: res
+      })
     })
   },
 

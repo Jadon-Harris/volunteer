@@ -12,8 +12,10 @@
   margin-top: 24rpx;
   margin-left: 32rpx;
   margin-right: 32rpx;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8)
+  width: auto;
+  background: rgba(255, 255, 255, 0.8);
+  height: calc(100vh - 140rpx);
+  z-index: 998;
 }
 
 .nameView,
@@ -22,7 +24,9 @@
 .managerView,
 .organizerView,
 .detailView,
-.creditView {
+.creditView,
+.recruitView,
+.typeView {
   margin-top: 24rpx;
   margin-left: 16rpx;
   margin-right: 16rpx;
@@ -35,7 +39,8 @@
 
 .address,
 .date,
-.credit {
+.credit,
+.type {
   display: flex;
   color: #888;
   margin-top: 12rpx;
@@ -67,11 +72,12 @@ input {
 
 textarea {
   display: flex;
-  width: 100%;
+  width: auto;
+  margin-bottom: 20rpx;
   padding-left: 12rpx;
+  padding-right: 12rpx;
   padding-top: 12rpx;
   border-radius: 12rpx;
-  background-color: white;
   color: #888;
 }
 
@@ -87,6 +93,7 @@ textarea {
   height: 140rpx;
   border-radius: 24rpx 24rpx 0rpx 0rpx;
   box-shadow: 0rpx -4rpx 16rpx 2rpx #888888;
+  z-index: 999;
 }
 
 .buttonView button {
