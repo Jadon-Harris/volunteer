@@ -72,8 +72,20 @@
   background-color: white;
 }
 
-.addressView,
-.timeView,.managerView {
+.addressView {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  margin-top: 24rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 2rpx solid #888;
+}
+
+.timeView,
+.managerView {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -85,15 +97,28 @@
   border-bottom: 2rpx solid #888;
 }
 
+.organizerView {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  padding-top: 16rpx;
+  padding-bottom: 24rpx;
+}
+
 .title {
   font-size: 32rpx;
-  color: #888;
+  font-weight: 600;
+  color: #1296db;
   width: 20%;
 }
 
 .content {
   font-size: 32rpx;
   margin-left: 24rpx;
+  color: #888;
 }
 
 image {

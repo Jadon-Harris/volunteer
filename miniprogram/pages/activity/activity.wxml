@@ -27,4 +27,6 @@
       <view class="content">{{organizer}}</view>
     </view>
   </view>
+
+  
 </view>

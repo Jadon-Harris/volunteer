@@ -1,5 +1,6 @@
 // pages/activity/activity.js
 import activityTypeStorage from '../../services/activityTypeStorage'
+import organizerStorage from '../../services/organizerStorage'
 var activityPage = null
 
 Page({
@@ -33,7 +34,8 @@ Page({
     activityType: "",
     year: "",
     month: "",
-    day: ""
+    day: "",
+    organizer:""
   },
 
   showAddress: function () {
@@ -55,7 +57,7 @@ Page({
     var date = new Date(this.data.activity.time)
     this.setData({
       year: date.getFullYear(),
-      month: date.getMonth()+1,
+      month: date.getMonth() + 1,
       day: date.getDay()
     })
 
@@ -64,6 +66,12 @@ Page({
         activityType: res[0].name
       })
     });
+
+    organizerStorage.getOrganizerById(activityPage.data.activity.orgainzerid,function (res) {
+      activityPage.setData({
+        organizer: res[0].name
+      })
+    })
   },
 
   /**
