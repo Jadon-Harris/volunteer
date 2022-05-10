@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="first">
+    <view class="name">{{activity.name}}</view>
+    <view class="typeAndStateView">
+      <view class="activityType">{{activityType}}</view>
+      <view class="state">{{activity.state}}</view>
+    </view>
+  </view>
+  <view class="second">
+    <view class="addressView" bindtap="showAddress">
+      <view class="title">项目地址</view>
+      <view class="content">{{activity.address.address}}</view>
+      <image src="../../images/position/position.png" mode="aspectFit"></image>
+    </view>
+    <view class="timeView">
+      <view class="title">服务时间</view>
+      <view class="content">{{year}} 年 {{month}} 月 {{day}} 日</view>
+      <!-- <image src="" mode="aspectFit"></image> -->
+    </view>
+    <view class="managerView" bindtap="getManagerPhone">
+      <view class="title">联系人</view>
+      <view class="content">{{activity.managername}}</view>
+      <!-- <image src="" mode="aspectFit"></image> -->
+    </view>
+    <view class="organizerView">
+      <view class="title">志愿团体</view>
+      <view class="content">{{organizer}}</view>
+    </view>
+  </view>
+</view>

@@ -1,6 +1,9 @@
 // pages/volunteerServicePage/volunteerServicePage.js
 import activityStorage from "../../services/activityStorage";
+import locationService from "../../services/locationService"
 var volunteerServicePage = null;
+var app = getApp();
+
 
 Page({
 
@@ -17,6 +20,7 @@ Page({
     activities: [],
     // 用户输入的搜索条件
     searchContent: "",
+    position: null,
   },
 
   timeViewTap: function (event) {
@@ -50,7 +54,6 @@ Page({
       })
     }
 
-    // TODO 后面距离需要更改
     var temp = this.data.activities;
 
     if (event.detail.value == "down") {
@@ -69,12 +72,10 @@ Page({
 
   inputConfirm: function () {
     activityStorage.searchActivities(this.data.searchContent, function (data) {
-      var res = JSON.parse(JSON.stringify(data))
-      res.forEach(activity => {
-        // TODO 求距离
-        activity["distance"] = Math.round(Math.random() * 100);
-        activity = JSON.stringify(activity)
+      data.map(activity => {
+        activity["distance"] = locationService.getDistance(volunteerServicePage.data.position, activity.address);
       })
+      var res = JSON.parse(JSON.stringify(data))
       volunteerServicePage.setData({
         activities: res,
       });
@@ -95,12 +96,10 @@ Page({
   blur: function () {
     if (this.data.searchContent == '') {
       activityStorage.getAllActivities(function (data) {
-        var res = JSON.parse(JSON.stringify(data));
-        res.forEach(activity => {
-          // TODO 求距离
-          activity["distance"] = Math.round(Math.random() * 100);
-          activity = JSON.stringify(activity)
+        data.map(activity => {
+          activity["distance"] = locationService.getDistance(volunteerServicePage.data.position, activity.address);
         })
+        var res = JSON.parse(JSON.stringify(data));
         volunteerServicePage.setData({
           activities: res,
         });
@@ -123,12 +122,10 @@ Page({
           duration: 2000
         })
       } else {
-        var res = JSON.parse(JSON.stringify(data));
-        res.forEach(activity => {
-          // TODO 求距离
-          activity["distance"] = Math.round(Math.random() * 100);
-          activity = JSON.stringify(activity)
+        data.forEach(activity => {
+          activity["distance"] = locationService.getDistance(volunteerServicePage.data.position, activity.address);
         })
+        var res = JSON.parse(JSON.stringify(data));
         volunteerServicePage.setData({
           activities: res,
         });
@@ -143,8 +140,29 @@ Page({
   },
 
   add: function () {
+    if (app.globalData.userInfo == null) {
+      wx.showToast({
+        title: '未登录',
+        icon: 'error',
+        duration: 1000
+      })
+    } else if (app.globalData.userInfo.userType != 'organizer') {
+      wx.showToast({
+        title: '账号权限不足',
+        icon: 'error',
+        duration: 1000
+      })
+    } else {
+      wx.navigateTo({
+        url: '../addActivity/addActivity',
+      })
+    }
+  },
+  itemTap: function (event) {
+    var activity = event.detail.activity;
+    var activityJson = JSON.stringify(activity)
     wx.navigateTo({
-      url: '../addActivity/addActivity',
+      url: '../activity/activity?activityJson=' + activityJson,
     })
   },
 
@@ -153,6 +171,11 @@ Page({
    */
   onLoad: function (options) {
     volunteerServicePage = this;
+    locationService.getUserLocation(function (res) {
+      volunteerServicePage.setData({
+        position: res
+      })
+    })
   },
 
   /**
@@ -167,12 +190,11 @@ Page({
    */
   onShow: function () {
     activityStorage.getAllActivities(function (data) {
-      var res = JSON.parse(JSON.stringify(data));
-      res.forEach(activity => {
-        // TODO 求距离
-        activity["distance"] = Math.round(Math.random() * 100);
-        activity = JSON.stringify(activity)
+      data.map(activity => {
+        activity["distance"] = locationService.getDistance(activity.address, volunteerServicePage.data.position);
       })
+
+      var res = JSON.parse(JSON.stringify(data));
       volunteerServicePage.setData({
         activities: res,
       });

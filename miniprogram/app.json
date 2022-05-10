@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/activity/activity",
     "pages/volunteerServicePage/volunteerServicePage",
     "pages/addActivity/addActivity",
     "pages/user/user",
-    "pages/testPage/testPage",
-    "pages/zztest/zztest"
+    "pages/zztest/zztest",
+    "pages/testPage/testPage"
   ],
   "tabBar": {
     "custom": false,

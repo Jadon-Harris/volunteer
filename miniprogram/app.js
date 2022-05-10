@@ -17,6 +17,7 @@ App({
     this.globalData = {
       userInfo : {
         'userType':"organizer",
+        // 'userType':"volunteer",
         '_id':"eb85cafe6257d69000ac632a705600c9"
       }
     }

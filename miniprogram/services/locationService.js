@@ -5,7 +5,7 @@ var positionService = {
    */
   getUserLocation: function (callback) {
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',
       success(res) {
         callback(res)
       }

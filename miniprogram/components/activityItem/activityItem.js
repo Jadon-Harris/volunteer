@@ -30,7 +30,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    itemTap: function () {
+      this.triggerEvent('itemTap', {
+        activity: this.data.activity
+      })
+    }
   },
 
   lifetimes: {
@@ -40,15 +44,14 @@ Component({
       this.setData({
         name: activity.name,
         state: activity.state,
-        address: activity.address,
+        address: activity.address.name,
         recruitPlan: activity.recruitPlan,
         recruited: activity.recruited,
         year: date.getFullYear(),
         month: date.getMonth() + 1,
         day: date.getDate(),
-        // 确定距离
         distance: activity.distance,
-        credit:activity.credit
+        credit: activity.credit
       });
     }
   }

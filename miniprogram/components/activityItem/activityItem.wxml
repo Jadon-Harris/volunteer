@@ -1,4 +1,4 @@
-<view class="itemView">
+<view class="itemView" bindtap="itemTap">
   <view class="nameAndStateView">
     <view class="nameView">{{name}}</view>
     <view class="stateView">

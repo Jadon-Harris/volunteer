@@ -89,7 +89,7 @@ Page({
     var activity = {
       "name": this.data.name,
       "typeid": this.data.typeid,
-      "address": this.data.address,
+      "address": this.data.addressObject,
       "time": new Date(this.data.date),
       "managername": this.data.managerName,
       "managerphone": this.data.managerPhone,
@@ -101,11 +101,17 @@ Page({
       "credit": this.data.credit
     }
     activityStorage.addActivity(activity, function () {
-      wx.showToast({
-        title: '新建成功',
-        icon: 'success',
-        duration: 2000
+      wx.navigateBack({
+        delta: 1,
+        success() {
+          wx.showToast({
+            title: '新建成功',
+            icon: 'success',
+            duration: 1000,
+          });
+        }
       })
+
     })
   },
 
