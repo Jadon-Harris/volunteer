@@ -1,0 +1,144 @@
+/* pages/mine/mine.wxss */
+/* view,text{
+  color:var(--themeColor);
+} */
+page {
+  /* background-color: #edece8; */
+  background-color: aliceblue;
+}
+
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+  /* background-color:var(--themeColor); */
+}
+
+.user_info_wrap .user_img_wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_info_wrap .user_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid lightblue;
+  color: white;
+  background-color: var(--themeColor);
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 10rpx;
+}
+
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 50vh;
+  width: 95%;
+  /* 模糊 */
+  filter: blur(15rpx);
+  border: #000000 solid;
+}
+
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  text-align: center;
+}
+
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border: gainsboro 1rpx solid;
+}
+
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: white;
+  font-size: 40rpx;
+}
+
+.user_content {
+  position: relative;
+}
+
+.user_content .user_main {
+  color: #666;
+  padding-bottom: 100rpx;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+
+.user_content .user_main .mine_menu {
+  background-color: #fff;
+  display: flex;
+}
+
+.user_content .user_main .mine_menu .nav {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.user_content .user_main .mine_menu .nav .menu_num {
+  color: var(--themeColor);
+}
+
+.user_content .user_main .orders_wrap {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+
+.user_content .user_main .orders_wrap .orders_title {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.user_content .user_main .orders_wrap .order_content {
+  display: flex;
+}
+
+.user_content .user_main .orders_wrap .order_content .order_item {
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+
+.user_content .user_main .orders_wrap .order_content .order_item .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+
+/* .user_content .user_main .orders_wrap .order_content .order_item .order_name {} */
+
+/* 退出登录的类样式 */
+.user_content .user_main .logout_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_content .user_main .info_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+
+.user_content .user_main .info_wrap .info_item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
