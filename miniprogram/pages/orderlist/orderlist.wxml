@@ -1,0 +1,19 @@
+<SearchInput bindinputChange="handleInputChange" bindclickButton="handleClickButton"></SearchInput>
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <!-- <block wx:if="{{tabs[0].isActive}}"> -->
+  <view class="tab">
+    <navigator wx:for="{{showList}}" wx:key="id" class="order_item" url="/pages/activitydetail/activitydetail?activityid={{item.activityid}}">
+      <!-- 左侧 图片容器 -->
+      <view class="order_img_wrap">
+        <image mode="widthFix" src="{{item.pic}}"></image>
+        <!-- <image mode="widthFix" src="../../icon/1.jpg"></image> -->
+      </view>
+      <!-- 右侧 活动容器 -->
+      <view class="order_info_wrap">
+        <view class="order_name">{{item.name}}</view>
+        <view class="order_time">{{item.time}}</view>
+      </view>
+    </navigator>
+  </view>
+  <!-- </block> -->
+</Tabs>

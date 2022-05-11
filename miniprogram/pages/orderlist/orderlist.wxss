@@ -1,0 +1,36 @@
+.order_item {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding: 10rpx;
+}
+
+.order_item .order_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_item .order_img_wrap image {
+  width: 80%;
+  height: 200rpx;
+}
+
+.order_item .order_info_wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.order_item .order_info_wrap .order_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.order_item .order_info_wrap .order_time {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
