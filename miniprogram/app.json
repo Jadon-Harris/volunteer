@@ -6,7 +6,8 @@
     "pages/user/user",
     "pages/zztest/zztest",
     "pages/testPage/testPage",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/orderlist/orderlist"
   ],
   "tabBar": {
     "custom": false,

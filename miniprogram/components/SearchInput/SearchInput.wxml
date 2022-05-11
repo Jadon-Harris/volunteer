@@ -1,0 +1,9 @@
+<!--components/searchInput/SearchInput.wxml-->
+<view class="search_input">
+  <view class="search_container">
+    <input class="search_item" placeholder="搜索" placeholder-class="place" bindinput="searchInput"></input>
+    <view class="search_bt_wrap">
+      <button class="search_bt" bindtap="searchButton">搜索</button>
+    </view>
+  </view>
+</view>
