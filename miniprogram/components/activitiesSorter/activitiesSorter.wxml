@@ -24,13 +24,13 @@
     <view class="typeView">
       <view class="title">活动类别</view>
       <view class="buttonView">
-        <view class="{{currentTypeIndex===typeIndex?'selected':''}}" style="color:{{currentTypeIndex===typeIndex?'white':'#7A7E83'}}" wx:for="{{typeList}}" wx:key="_id" wx:for-index="typeIndex" data-typeindex="{{typeIndex}}" bindtap="selectType">{{typeList[typeIndex].name}}</view>
+        <view class="{{currentTypeIndex===typeIndex?'selected':''}}" style="color:{{currentTypeIndex===typeIndex?'white':'#1296db'}}" wx:for="{{typeList}}" wx:key="_id" wx:for-index="typeIndex" data-typeindex="{{typeIndex}}" bindtap="selectType">{{typeList[typeIndex].name}}</view>
       </view>
     </view>
     <view class="stateView">
       <view class="title">活动状态</view>
       <view class="buttonView">
-        <view class="{{currentStateIndex===stateIndex?'selected':''}}" style="color:{{currentStateIndex===stateIndex?'white':'#7A7E83'}}" wx:for="{{stateList}}" wx:key="*this" wx:for-index="stateIndex" data-stateindex="{{stateIndex}}" bindtap="selectState">{{stateList[stateIndex]}}</view>
+        <view class="{{currentStateIndex===stateIndex?'selected':''}}" style="color:{{currentStateIndex===stateIndex?'white':'#1296db'}}" wx:for="{{stateList}}" wx:key="*this" wx:for-index="stateIndex" data-stateindex="{{stateIndex}}" bindtap="selectState">{{stateList[stateIndex]}}</view>
       </view>
     </view>
     <view class="bottom">

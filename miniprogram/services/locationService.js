@@ -29,7 +29,7 @@ var positionService = {
     var a = radLat1 - radLat2;
     var b = (lng1 * Math.PI) / 180.0 - (lng2 * Math.PI) / 180.0;
     var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
-    s = s * 6378.137; // EARTH_RADIUS;
+    s = s * 6378.137;
     s = Math.round(s * 10) / 10;
     return s;
   },
@@ -38,11 +38,11 @@ var positionService = {
    * 从地图选取位置。
    * @param {Function} callback 回调函数。
    */
-  chooseLocation:function (callback) {
+  chooseLocation: function (callback) {
     wx.chooseLocation({
-      success(res){
+      success(res) {
         callback(res)
-      }  
+      }
     })
   }
 }
