@@ -1,6 +1,8 @@
 // pages/activity/activity.js
 import activityTypeStorage from '../../services/activityTypeStorage'
 import organizerStorage from '../../services/organizerStorage'
+import orderStorage from '../../services/orderStorage'
+var app = getApp();
 var activityPage = null
 
 Page({
@@ -9,37 +11,61 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activity: {
-      "address": {
-        address: "辽宁省沈阳市浑南区智慧四街",
-        errMsg: "chooseLocation:ok",
-        latitude: 41.67718,
-        longitude: 123.4631,
-        name: "浑南区沈阳市政府(智慧四街东)"
-      },
-      "credit": 10,
-      "detail": "拿球说话",
-      "distance": 0,
-      "managername": "朱欧文",
-      "managerphone": "13322472185",
-      "name": "未成年心理辅导",
-      "orgainzerid": "eb85cafe6257d69000ac632a705600c9",
-      "recruitPlan": 12,
-      "recruited": 10,
-      "state": "招募待启动",
-      "time": "2022-04-01T08:04:21.000Z",
-      "typeid": "fe4f571c6257d50e004d21a315f0cb8b",
-      "_id": "0067b443625ad55d00e182b060b76ce8"
-    },
+    activity: null,
     activityType: "",
     year: "",
     month: "",
     day: "",
-    organizer:""
+    organizer: "",
+    isVolunteer: false
   },
 
   showAddress: function () {
+    const latitude = this.data.activity.address.latitude
+    const longitude = this.data.activity.address.longitude
+    wx.openLocation({
+      latitude,
+      longitude,
+      scale: 18
+    })
+  },
 
+  getManagerPhone: function () {
+    var phone = this.data.activity.managerphone
+    wx.showModal({
+      title: '联系人电话',
+      content: phone,
+      confirmText: '复制',
+      success(res) {
+        if (res.confirm) {
+          wx.setClipboardData({
+            data: activityPage.data.activity.managerphone,
+            success(res) {
+              wx.showToast({
+                title: '复制成功',
+                icon: 'success',
+                duration: 1000
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+
+  join: function () {
+    orderStorage.addOrder(this.data.activity._id, app.globalData.userInfo._id, function () {
+      wx.navigateBack({
+        delta: 1,
+        success() {
+          wx.showToast({
+            title: '报名成功',
+            icon: 'success',
+            duration: 1000
+          })
+        }
+      })
+    })
   },
 
   /**
@@ -47,12 +73,16 @@ Page({
    */
   onLoad: function (options) {
     activityPage = this;
+    var isVolunteer = (app.globalData.userInfo.userType == 'volunteer')
+    this.setData({
+      isVolunteer: isVolunteer
+    })
 
-    // var activity = JSON.parse(options.activityJson)
+    var activity = JSON.parse(options.activityJson)
 
-    // this.setData({
-    //   activity: JSON.parse(options.activityJson)
-    // })
+    this.setData({
+      activity: activity
+    })
 
     var date = new Date(this.data.activity.time)
     this.setData({
@@ -67,7 +97,7 @@ Page({
       })
     });
 
-    organizerStorage.getOrganizerById(activityPage.data.activity.orgainzerid,function (res) {
+    organizerStorage.getOrganizerById(activityPage.data.activity.orgainzerid, function (res) {
       activityPage.setData({
         organizer: res[0].name
       })

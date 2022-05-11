@@ -15,10 +15,10 @@ App({
     }
 
     this.globalData = {
-      userInfo : {
-        'userType':"organizer",
-        // 'userType':"volunteer",
-        '_id':"eb85cafe6257d69000ac632a705600c9"
+      userInfo: {
+        // 'userType':"organizer",
+        'userType': "volunteer",
+        '_id': "2c9907ee6257d4640001936f526f9c62"
       }
     }
   }

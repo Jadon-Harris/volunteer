@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/activity/activity",
     "pages/volunteerServicePage/volunteerServicePage",
+    "pages/activity/activity",
     "pages/addActivity/addActivity",
     "pages/user/user",
     "pages/zztest/zztest",
@@ -14,8 +14,7 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/volunteerServicePage/volunteerServicePage",
         "iconPath": "images/tabBar/service.png",
         "selectedIconPath": "images/tabBar/service_HL.png",

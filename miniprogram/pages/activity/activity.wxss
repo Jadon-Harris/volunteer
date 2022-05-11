@@ -6,7 +6,7 @@
   background: linear-gradient(to bottom, #1296db, white);
 }
 
-.first {
+.card {
   display: flex;
   flex-direction: column;
   border-radius: 24rpx;
@@ -60,16 +60,6 @@
   color: white;
   background-color: #1296db;
   right: 0;
-}
-
-.second {
-  display: flex;
-  flex-direction: column;
-  border-radius: 24rpx;
-  margin-top: 24rpx;
-  margin-left: 32rpx;
-  margin-right: 32rpx;
-  background-color: white;
 }
 
 .addressView {
@@ -126,4 +116,42 @@ image {
   width: 32rpx;
   position: absolute;
   right: 0;
+}
+
+.detailView {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailView .title {
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+}
+
+.detailView .content {
+  margin-top: 16rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  margin-bottom: 24rpx;
+  word-wrap: break-word;
+}
+
+.buttonView {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 140rpx;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+  box-shadow: 0rpx -4rpx 16rpx 2rpx #888888;
+}
+
+.buttonView button {
+  border-radius: 24rpx;
+  width: 70%;
+  background-color: #1296db;
+  color: white;
 }
