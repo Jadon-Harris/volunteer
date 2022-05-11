@@ -5,7 +5,8 @@
     "pages/addActivity/addActivity",
     "pages/user/user",
     "pages/zztest/zztest",
-    "pages/testPage/testPage"
+    "pages/testPage/testPage",
+    "pages/mine/mine"
   ],
   "tabBar": {
     "custom": false,
@@ -21,7 +22,7 @@
         "text": "志愿服务"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/mine/mine",
         "iconPath": "images/tabBar/user.png",
         "selectedIconPath": "images/tabBar/user_HL.png",
         "text": "我的"

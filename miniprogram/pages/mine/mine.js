@@ -1,8 +1,3 @@
-import {
-  formatTime,
-  formatDate
-} from "../../utils/util.js";
-
 const app = getApp();
 Page({
   data: {
