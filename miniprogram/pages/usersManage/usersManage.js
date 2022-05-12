@@ -13,32 +13,44 @@ Page({
     this.getData();
   },
 
+  onShow: function (options) {
+    this.getData()
+  },
+
   getData() {
     //查询数据==>根据organizer-id查找activity表
-    activityStorage.getActivitiesByContidion({
-      // orgainzerid: 'eb85cafe6257d69000ac632a705600c9'
-      orgainzerid: app.globalData.userInfo
-    }, res => {
-      let newArray = this.dateToString(res);
-      this.setData({
-        activityList: newArray,
-        copyList: JSON.parse(JSON.stringify(newArray))
+    if (app.globalData.userInfo != null) {
+      console.log(app.globalData.userInfo._id)
+      activityStorage.getActivitiesByContidion({
+        orgainzerid: app.globalData.userInfo._id
+      }, res => {
+        let newArray = this.dateToString(res);
+        this.setData({
+          activityList: newArray,
+          copyList: JSON.parse(JSON.stringify(newArray))
+        })
       })
-    })
+    } else {
+      wx.showToast({
+        title: '未登录',
+        icon: 'error',
+        duration: 1000
+      })
+    }
   },
 
   //将数组时间戳转为字符串
-  dateToString(array){
-    for(let i=0;i<array.length;i++){
+  dateToString(array) {
+    for (let i = 0; i < array.length; i++) {
       array[i]['time'] = util.formatTime(array[i]['time']);
     }
     return array;
   },
 
-  goUsers(e){
+  goUsers(e) {
     let activityJson = JSON.stringify(e.currentTarget.dataset.activity);
     wx.navigateTo({
-      url: '/pages/userList/userList?activity='+activityJson,
+      url: '/pages/userList/userList?activity=' + activityJson,
     })
   },
 
