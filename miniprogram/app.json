@@ -7,8 +7,6 @@
     "pages/user/user",
     "pages/testPage/testPage",
     "pages/mine/mine",
-    "pages/orderlist/orderlist",
-    "pages/usersManage/usersManage",
     "pages/exchange/exchange",
     "pages/signin/signin",
     "pages/ex_sucess/ex_sucess",
