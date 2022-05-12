@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/signup/signup",
     "pages/volunteerServicePage/volunteerServicePage",
+    "pages/signup/signup",
     "pages/activity/activity",
     "pages/addActivity/addActivity",
     "pages/user/user",
@@ -12,7 +12,9 @@
     "pages/ex_sucess/ex_sucess",
     "pages/ex_fail/ex_fail",
     "pages/ex_history/ex_history",
-    "pages/zztest/zztest"
+    "pages/zztest/zztest",
+    "pages/usersManage/usersManage",
+    "pages/orderList/orderList"
   ],
   "tabBar": {
     "custom": false,
