@@ -1,0 +1,10 @@
+<SearchInput bindinputChange="handleInputChange" bindclickButton="handleClickButton"></SearchInput>
+<view class="activity">
+  <view wx:for="{{activityList}}" wx:key="id" class="activity_item" bindtap="goUsers" data-activity="{{item}}" >
+    <view class="activity_content">
+      <view class="activity_name">{{item.name}}</view>
+      <view class="activity_time">{{item.time}}</view>
+    </view>
+    <text class="iconfont icon-qianjin_xiayibu_youjiantou_xiayiye"></text>
+  </view>
+</view>

@@ -23,6 +23,12 @@
         "text": "志愿服务"
       },
       {
+        "pagePath": "pages/usersManage/usersManage",
+        "iconPath": "images/tabBar/manage.png",
+        "selectedIconPath": "images/tabBar/manage_HL.png",
+        "text": "管理"
+      }
+      {
         "pagePath": "pages/mine/mine",
         "iconPath": "images/tabBar/user.png",
         "selectedIconPath": "images/tabBar/user_HL.png",

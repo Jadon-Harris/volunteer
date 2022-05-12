@@ -1,0 +1,25 @@
+.activity{
+  padding-top: 20rpx;
+}
+
+.activity_item{
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding: 0 10rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity_item .activity_content{
+  padding: 10rpx;
+}
+
+.activity_item .activity_content .activity_name{
+  font-size: 36rpx;
+}
+
+.activity_item .activity_content .activity_time{
+  margin-top: 5rpx;
+  font-size: 32rpx;
+  color: var(--themeColor);
+}
