@@ -1,39 +1,39 @@
 <!--pages/signin/signin.wxml-->
 <wxs src="./tools.wxs" module="tools" />
 <view class="context">
-<view class="top">
-  <image src="../signin/image/left.png" bindtap="bindPreMonth"></image>
-  <view>{{year}}年{{month}}月</view>
-  <image src="../signin/image/right.png" bindtap="bindNextMonth"></image>
-</view>
- 
-<view  class="middle">
-  <view wx:for="{{data_arr}}" wx:key="index" class="middle_num">
-    {{item}}
+  <view class="top">
+    <image src="../signin/image/left.png" bindtap="bindPreMonth"></image>
+    <view>{{year}}年{{month}}月</view>
+    <image src="../signin/image/right.png" bindtap="bindNextMonth"></image>
   </view>
-</view>
- 
-<view class="calen">
- 
-  <view wx:for="{{startWeek}}" wx:key="index" class="calen_blank"></view>
-  <view wx:for="{{currentMonthDays}}" 
-  class='{{(tools.indexOf(signInDays, index+1) ? "active": "calen_num")}}' 
-    wx:key="index">
-  {{index+1}}
+
+  <view class="middle">
+    <view wx:for="{{data_arr}}" wx:key="index" class="middle_num">
+      {{item}}
+    </view>
   </view>
-  
-</view>
- 
+
+  <view class="calen">
+
+    <view wx:for="{{startWeek}}" wx:key="index" class="calen_blank"></view>
+    <view class="calen_item" wx:for="{{currentMonthDays}}">
+      <view class='{{(tools.indexOf(signInDays, index+1) ? "active": "calen_num")}}' wx:key="index">
+        {{index+1}}
+      </view>
+    </view>
+
+  </view>
+
 </view>
 <button bindtap="qiandao">{{signText}}</button>
- 
+
 <view class="date">
   <text>已连续签到</text>
   <view class="num">{{lianxu}}</view>
   <text>天</text>
 </view>
- 
+
 <view class="fighting">
- 
+
   <text>加油！</text>
 </view>

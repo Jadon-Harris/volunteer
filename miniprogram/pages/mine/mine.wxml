@@ -58,14 +58,14 @@
 
     <!-- 签到和奖品 -->
     <view class="info_wrap">
-      <view class="info_item">
+      <navigator class="info_item" url="../../pages/signin/signin">
         <text>签到</text>
         <text class="iconfont icon-qianjin_xiayibu_youjiantou_xiayiye"></text>
-      </view>
-      <view class="info_item">
+      </navigator>
+      <navigator class="info_item"url="../../pages/exchange/exchange">
         <text>奖品兑换</text>
         <text class="iconfont icon-qianjin_xiayibu_youjiantou_xiayiye"></text>
-      </view>
+      </navigator>
     </view>
 
     <!--个人信息-->

@@ -15,12 +15,12 @@ App({
     }
 
     this.globalData = {
-      // userInfo: {
-      //   // 'userType':"organizer",
-      //   'userType': "volunteer",
-      //   '_id': "2c9907ee6257d4640001936f526f9c62"
-      // }
-      userInfo: null
+      userInfo: {
+        // 'userType':"organizer",
+        'userType': "volunteer",
+        '_id': "2c9907ee6257d4640001936f526f9c62"
+      }
+      // userInfo: null
     }
   }
 })

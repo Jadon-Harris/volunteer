@@ -28,9 +28,9 @@ Page({
   //跳转到订单界面
   goOrderList(e){
     let {state} = e.currentTarget.dataset;
-    if (isLogin) {
+    if (this.data.isLogin) {
       wx.navigateTo({
-        url: `/pages/orderlist/orderlist?state=${state}`,
+        url: `/pages/orderList/orderList?state=${state}`,
       })
     } else{
       wx.showToast({
@@ -43,9 +43,17 @@ Page({
 
   //跳转到个人信息界面
   goUserInfo() {
-    wx.navigateTo({
-      url: '/pages/userinfo/userinfo',
-    })
+    if (this.data.isLogin) {
+      wx.navigateTo({
+        url: '/pages/userInfo/userInfo',
+      })
+    } else{
+      wx.showToast({
+        title: '您还没有登录！',
+        icon: 'none',
+        mask: true
+      })
+    }
   },
 
   //跳转到收藏界面
