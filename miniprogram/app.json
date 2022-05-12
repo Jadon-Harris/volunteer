@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/signup/signup",
     "pages/volunteerServicePage/volunteerServicePage",
     "pages/activity/activity",
     "pages/addActivity/addActivity",
     "pages/user/user",
-    "pages/zztest/zztest",
     "pages/testPage/testPage",
     "pages/mine/mine",
     "pages/orderlist/orderlist",
@@ -13,8 +13,8 @@
     "pages/signin/signin",
     "pages/ex_sucess/ex_sucess",
     "pages/ex_fail/ex_fail",
-    "pages/ex_history/ex_history"
-
+    "pages/ex_history/ex_history",
+    "pages/zztest/zztest"
   ],
   "tabBar": {
     "custom": false,
@@ -23,7 +23,8 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/volunteerServicePage/volunteerServicePage",
         "iconPath": "images/tabBar/service.png",
         "selectedIconPath": "images/tabBar/service_HL.png",

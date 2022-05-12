@@ -1,0 +1,42 @@
+<view class="page">
+  <scroll-view class="info" scroll-y="true">
+    <view class="card">
+      <view class="userNameBox">
+        <view class="title">用户名</view>
+        <input type="text" placeholder="请输入用户名" />
+      </view>
+      <view class="passwordBox">
+        <view class="title">密码</view>
+        <input type="safe-password" placeholder="请输入密码" />
+      </view>
+      <view class="realNameBox">
+        <view class="title">真实姓名</view>
+        <input type="text" placeholder="请输入真实姓名" />
+      </view>
+      <view class="genderBox">
+        <view class="title">性别</view>
+        <picker bindchange='genderPicker' value='{{index}}' range='{{genderArray}}'>
+          <view class="content">{{gender}}</view>
+        </picker>
+      </view>
+      <view class="idTypeBox">
+        <view class="title">身份证件类型</view>
+        <picker bindchange='idTypePicker' value='{{index}}' range='{{idTypeArray}}'>
+          <view class="content">{{idType}}</view>
+        </picker>
+      </view>
+      <view class="idBox">
+        <view class="title">证件号码</view>
+        <input type="text" placeholder="请输入证件号码" />
+      </view>
+      <view class="phoneBox">
+        <view class="title">联系电话</view>
+        <input type="number" placeholder="请输入联系电话" />
+      </view>
+      <view class="emailBox">
+        <view class="title">电子邮箱</view>
+        <input type="text" placeholder="请输入电子邮箱" />
+      </view>
+    </view>
+  </scroll-view>
+</view>
