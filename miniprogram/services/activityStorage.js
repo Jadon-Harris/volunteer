@@ -90,7 +90,7 @@ var activityStorage = {
 
   /**
    * 根据userid获取该客户的活动
-   * @param {String} where 
+   * @param {Object} where 
    * @param {Function} callback 
    */
   getActivityByUserId: function (where, callback) {
