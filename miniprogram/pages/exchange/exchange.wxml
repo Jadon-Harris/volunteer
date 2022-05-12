@@ -1,0 +1,73 @@
+<view class="page">
+    
+
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="cloud://cloud1-2gr2982q8659fa7f.636c-cloud1-2gr2982q8659fa7f-1310918851/exchangeImg/1224186.png" style="width: 50px; height: 50px; display: block"/>
+                    
+                </view>
+                <view class="weui-cell__bd">
+                    <view>联系人名称</view>
+                    <view style="font-size: 13px;color: #888888;">当前积分:{{jifen}}</view>
+                </view>
+                <view class="button-sp-area">
+            <button class="weui-btn mini-btn" type="default" size="mini" bindtap="history">历史</button>
+        </view>
+            </view>
+            <view class="weui-cell">
+                
+            </view>
+            <view class="weui-cell">
+                
+              </view>
+        </view>
+    </view>
+</view>
+
+<view class='myHomePage' wx:if="{{isShow && !offLine}}">
+
+
+<!-- 商品图 -->
+<view class='extra'></view>
+<view class='fruit-container'>
+  <!-- 水果信息卡片 -->
+  <block wx:for="{{fruitInfo}}" wx:key='fruitID'>
+    <view class='fruit-item'  data-fID="{{item._id}}" >
+      <!-- 图片 -->
+      <view class='fruit-image'>
+        <image src='{{item.imgUrl}}' mode='aspectFill'></image>
+      </view>
+      <!-- 其他信息 -->
+      <view class='fruit-info'>
+        <view class='line1'>
+          <!-- 名称 -->
+          <text class='name'>{{item.name}}</text>
+        </view>
+        <view class='line2'>
+          <!-- 价格 -->
+          <view class='price'>
+            <text>￥{{item.price}}</text>
+            <text class='unit'>/{{item.unit}}</text>
+          </view>
+          <!-- 购物车 -->
+          <!-- <view class='like-image' catchtap="addCartByHome" data-_id="{{item._id}}"> -->
+          <image src='../../images/eximages/icon/cart4.png' mode='aspectFit' catchtap="addCartByHome" data-value="{{item}}" ></image>
+          <!-- </view> -->
+          <!-- 销量 -->
+          <!-- <view class='like-num'>添加</view>  -->
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- 底部 -->
+<view class='homeBottom'>
+  <view class='bottomLine'></view>
+  <view class='bottomWord'>coding by ZhaoZhao</view>
+  <view class='bottomLine'></view>
+</view>
+
+</view>

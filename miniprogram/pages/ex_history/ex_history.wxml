@@ -1,0 +1,28 @@
+<!--pages/ex_history/ex_history.wxml-->
+<view class="page">
+    <view wx:for="{{order}}" wx:key="item.date">
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">消耗积分</view>
+                    <view class="weui-form-preview__value_in-hd">¥{{item.price}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">兑换产品</view>
+                    <view class="weui-form-preview__value">{{item.name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">兑换时间</view>
+                    <view class="weui-form-preview__value">{{item.date}}</view>
+                </view>
+                
+            </view>
+            
+        </view>
+        
+    </view>
+  </view>
+</view>

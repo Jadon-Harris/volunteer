@@ -8,7 +8,13 @@
     "pages/testPage/testPage",
     "pages/mine/mine",
     "pages/orderlist/orderlist",
-    "pages/usersManage/usersManage"
+    "pages/usersManage/usersManage",
+    "pages/exchange/exchange",
+    "pages/signin/signin",
+    "pages/ex_sucess/ex_sucess",
+    "pages/ex_fail/ex_fail",
+    "pages/ex_history/ex_history"
+
   ],
   "tabBar": {
     "custom": false,

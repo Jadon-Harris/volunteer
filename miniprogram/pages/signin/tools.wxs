@@ -1,0 +1,15 @@
+// WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。
+
+// 说白了就是一些js语法无法在页面标签中使用可以在这里定义
+// Object.keys()   
+// toString()  
+// indexOf() 
+// 这些不能用
+function indexOf(arr, value) {
+  if (arr.indexOf(value) < 0) {
+      return false;
+  } else {
+      return true;
+  }
+}
+module.exports.indexOf = indexOf;

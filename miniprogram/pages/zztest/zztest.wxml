@@ -1,2 +1,2 @@
 <!--pages/zztest/zztest.wxml-->
-<text>pages/zztest/zztest.wxml</text>
+<view>{{year}}年{{month}}月</view>

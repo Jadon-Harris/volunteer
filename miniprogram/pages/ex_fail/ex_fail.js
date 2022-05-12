@@ -1,24 +1,23 @@
-// pages/zztest/zztest.js
+// pages/ex_fail/ex_fail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    year:"",
-    month:""
 
+  },
+  queren:function(e){
+    wx.navigateBack({
+      delta: 1
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      let year=0;
-      let month=0;
-      this.setData({
-        year,month
-      })
+
   },
 
   /**

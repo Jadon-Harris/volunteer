@@ -1,0 +1,5 @@
+/* pages/ex_fail/ex_fail.wxss */
+page{
+  background-color: #FFFFFF;
+}
+page,.page{height:100%;}

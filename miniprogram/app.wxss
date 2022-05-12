@@ -1,6 +1,10 @@
 /**app.wxss**/
+
 @import 'style/iconfont.wxss';
 @import "style/iconfont-volunteer.wxss";
+
+
+@import"weui.wxss";
 
 .container {
   display: flex;

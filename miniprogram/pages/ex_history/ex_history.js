@@ -1,24 +1,34 @@
-// pages/zztest/zztest.js
+// pages/ex_history/ex_history.js
+import SignInServices from "./../../services/SignInServices";
+import timeServices from "./../../services/timeServices"
+var exhis=null;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    year:"",
-    month:""
-
+       a:1,
+       order:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      let year=0;
-      let month=0;
-      this.setData({
-        year,month
+    exhis=this;
+    SignInServices.getOrderById("1",function (data) {
+      
+      var all=data;
+      for (var i = 0; i < all.length; i++) {
+        var rdate=data[i].date.toISOString()
+        all[i].date=rdate
+      }
+      exhis.setData({
+        order:all,
+        a:2
       })
+    });
   },
 
   /**
