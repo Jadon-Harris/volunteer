@@ -37,6 +37,22 @@ var userStorage = {
           reject(err);
         })
     })
+  },
+
+  /**
+   * 根据志愿活动id获取人员列表
+   * @param {Object} where 
+   * @param {Function} callback 
+   */
+  getUserByActivityId(where,callback){
+    wx.cloud.callFunction({
+      name: 'getUserByActivityId',
+      data: {
+        condition: where,
+      }
+    }).then(res => {
+      callback(res.result.list)
+    })
   }
 
 };

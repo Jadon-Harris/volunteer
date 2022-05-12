@@ -1,0 +1,62 @@
+<view class="edit_wrap">
+
+  <!-- <view class="img_wrap" bindtap="handleUpImage">
+    <text>图片</text>
+    <image wx:if="{{baseUrl}}" src="{{baseUrl+picUrl}}" catchtap="handlePreviewImage" data-url="{{baseUrl+picUrl}}"></image>
+  </view> -->
+
+  <view class="edit_content">
+    <text class="title">用户名</text>
+    <input class="content" placeholder="用户名" bindinput="usernameInput" disabled="{{readOnly}}" value="{{updateUser.username}}"></input>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">姓名</text>
+    <input class="content" placeholder="姓名" bindinput="realnameInput" disabled="{{readOnly}}" value="{{updateUser.realname}}"></input>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">密码</text>
+    <input class="content" placeholder="密码" bindinput="passwordInput" disabled="{{readOnly}}" value="{{updateUser.password}}"></input>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">邮箱</text>
+    <input class="content" placeholder="邮箱" bindinput="emailInput" disabled="{{readOnly}}" value="{{updateUser.email}}"></input>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">性别</text>
+    <radio-group class="radio_group" bindchange="radioChange1">
+      <label class="radio_label" wx:for="{{genderItems}}" wx:key="value">
+        <view class="radio_value">
+          <radio value="{{item.value}}" checked="{{item.checked}}" disabled="{{readOnly}}" />
+        </view>
+        <view class="radio_name">{{item.name}}</view>
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">证件</text>
+    <radio-group class="radio_group" bindchange="radioChange2">
+      <label class="radio_label" wx:for="{{idtypeItems}}" wx:key="value">
+        <view class="radio_value">
+          <radio value="{{item.value}}" checked="{{item.checked}}" disabled="{{readOnly}}" />
+        </view>
+        <view class="radio_name">{{item.name}}</view>
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="edit_content">
+    <text class="title">电话</text>
+    <input class="content" placeholder="电话号码" bindinput="phoneInput" disabled="{{readOnly}}" value="{{updateUser.phone}}"></input>
+  </view>
+
+  <view class="bt_wrap">
+    <button class="bt" size="mini" bindtap="handleEditButton">{{editButton}}</button>
+    <button class="bt" size="mini" bindtap="handleSubmit" disabled="{{readOnly}}">保存</button>
+  </view>
+
+</view>

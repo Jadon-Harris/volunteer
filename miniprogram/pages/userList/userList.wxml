@@ -1,0 +1,20 @@
+<view>
+  <SearchInput bindinputChange="handleInputChange" bindclickButton="handleClickButton"></SearchInput>
+  <view class="tr">
+    <view class="th">用户名</view>
+    <view class="th">等级</view>
+    <view class="th ">操作</view>
+  </view>
+  <view class="list" wx:for="{{list}}" wx:key="_id">
+    <view class="td">{{item.username}}</view>
+    <view class="td">{{item.level}}</view>
+    <view class="td bt_wrap">
+      <button class="bt_update" catchtap="goUserDetail" data-user="{{item}}">详情</button>
+      <button class="bt_delete" catchtap="handleDelete" data-id="{{item._id}}">删除</button>
+    </view>
+  </view>
+  <view class="father">
+    <view class="son">
+    </view>
+  </view>
+</view>

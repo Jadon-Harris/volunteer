@@ -37,22 +37,22 @@
     <view class="orders_wrap">
       <view class="orders_title">我的志愿</view>
       <view class="order_content">
-        <navigator class="order_item" bindtap="goOrderList" data-state="0">
+        <view class="order_item" bindtap="goOrderList" data-state="0">
           <view class="iconfont icon-dengdai"></view>
           <view class="order_name">待启动</view>
-        </navigator>
-        <navigator class="order_item" bindtap="goOrderList" data-state="1">
+        </view>
+        <view class="order_item" bindtap="goOrderList" data-state="1">
           <view class="iconfont icon-shixishengzhaomu"></view>
           <view class="order_name">招募中</view>
-        </navigator>
-        <navigator class="order_item" bindtap="goOrderList" data-state="2">
+        </view>
+        <view class="order_item" bindtap="goOrderList" data-state="2">
           <view class="iconfont icon-jieshu"></view>
           <view class="order_name">已结束</view>
-        </navigator>
-        <navigator class="order_item" bindtap="goOrderList" data-state="3">
+        </view>
+        <view class="order_item" bindtap="goOrderList" data-state="3">
           <view class="iconfont icon-yijieshu"></view>
           <view class="order_name">已结项</view>
-        </navigator>
+        </view>
       </view>
     </view>
 

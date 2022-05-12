@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "人员列表",
+  "usingComponents": {
+    "SearchInput": "../../components/SearchInput/SearchInput"
+  }
+}

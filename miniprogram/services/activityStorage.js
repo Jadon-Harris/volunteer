@@ -86,6 +86,22 @@ var activityStorage = {
         callback()
       }
     })
+  },
+
+  /**
+   * 根据userid获取该客户的活动
+   * @param {String} where 
+   * @param {Function} callback 
+   */
+  getActivityByUserId: function (where, callback) {
+    wx.cloud.callFunction({
+      name: 'getActivityByUserId',
+      data: {
+        condition: where,
+      }
+    }).then(res => {
+      callback(res.result.list)
+    })
   }
 };
 

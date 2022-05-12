@@ -15,7 +15,9 @@
     "pages/zztest/zztest",
     "pages/usersManage/usersManage",
     "pages/orderList/orderList",
-    "pages/userInfo/userInfo"
+    "pages/userInfo/userInfo",
+    "pages/userList/userList",
+    "pages/userDetail/userDetail"
   ],
   "tabBar": {
     "custom": false,

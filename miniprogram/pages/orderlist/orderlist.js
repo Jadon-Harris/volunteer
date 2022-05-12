@@ -2,6 +2,7 @@ import {
   formatTime,
   formatDate
 } from "../../utils/util.js";
+import activityStorage from "../../services/activityStorage";
 
 Page({
   data: {
@@ -27,8 +28,10 @@ Page({
     value: ''
   },
 
-  onLoad(options){
-    let {state} = options;
+  onLoad(options) {
+    let {
+      state
+    } = options;
     this.getData(() => {
       this.changeTitleByIndex(parseInt(state));
     });
@@ -49,15 +52,10 @@ Page({
 
   getData(callback) {
     //调用云函数，获取该用户的活动列表
-    wx.cloud.callFunction({
-      name: 'getActivityByUserId',
-      data: {
-        condition: {
-          userid: getApp().globalData.userInfo._id
-        },
-      }
-    }).then(res => {
-      let orderList = res.result.list;
+    activityStorage.getActivityByUserId({
+      userid: getApp().globalData.userInfo._id
+    }, res => {
+      let orderList = res;
       //将时间格式化
       orderList.forEach(v => {
         v.time = formatDate(new Date(v.time))
