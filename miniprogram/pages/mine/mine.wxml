@@ -1,9 +1,9 @@
 <!--pages/mine/mine.wxml-->
 <view class="user_info_wrap">
   <view wx:if="{{isLogin}}" class="user_img_wrap">
-    <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+    <image class="user_bg" src="{{userinfo.avatarSrc}}"></image>
     <view class="user_info">
-      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <image class="user_icon" src="{{userinfo.avatarSrc}}"></image>
       <view class="user_name">{{userinfo.nickName}}</view>
     </view>
   </view>

@@ -66,28 +66,15 @@ Page({
 
   //登录
   login() {
-    wx.getUserProfile({
-      desc: '必须授权登录才可以使用',
-
-      success: res => {
-        let userinfo = res.userInfo;
-        //将静态资源中的userInfo赋值
-        getApp().globalData.userInfo = userinfo;
-        this.setData({
-          userinfo,
-          isLogin: true
-        })
-      },
-      fail: res => {
-        console.log('授权失败', res)
-      }
+    wx.navigateTo({
+      url: '../login/login'
     })
   },
 
   //退出登录
   logout() {
     //判断对象userinfo是否为空
-    if (JSON.stringify(this.data.userinfo) !== '{}') {
+    if (JSON.stringify(this.data.userinfo) !== null) {
       //弹窗提示
       wx.showModal({
         title: '提示',

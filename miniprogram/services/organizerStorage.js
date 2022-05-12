@@ -15,6 +15,35 @@ var organizerStorage = {
         callback(res.data)
       }
     })
+  },
+
+  addOrganizer: function (organizer, callback) {
+    db.collection("organizer").add({
+      data: {
+        idtype: organizer.idtype,
+        manageremail: organizer.manageremail,
+        managerid: organizer.managerid,
+        managername: organizer.managername,
+        managerphone: organizer.managerphone,
+        name: organizer.name,
+        password: organizer.password,
+        avatarSrc: organizer.avatarSrc
+      },
+      success: function (res) {
+        callback()
+      }
+    })
+  },
+
+  login: function (username, password, callback) {
+    db.collection("organizer").where({
+      name: username,
+      password: password
+    }).get({
+      success: function (result) {
+        callback(result.data)
+      }
+    })
   }
 }
 

@@ -1,17 +1,23 @@
 <view class="page">
-  <scroll-view class="info" scroll-y="true">
+  <scroll-view wx:if="{{isVolunteer=='true'}}" class="info" scroll-y="true">
     <view class="card">
+      <view class="avatarBox">
+        <view class="avatarContainer" bindtap="selectAvatar">
+          <image wx:if="{{avatarSrc!=null}}" src="{{avatarSrc}}" mode="aspectFill"></image>
+          <view wx:else class="selcetAvatar">选择头像</view>
+        </view>
+      </view>
       <view class="userNameBox">
         <view class="title">用户名</view>
-        <input type="text" placeholder="请输入用户名" />
+        <input type="text" placeholder="请输入用户名" bindinput="inputName" />
       </view>
       <view class="passwordBox">
         <view class="title">密码</view>
-        <input type="safe-password" placeholder="请输入密码" />
+        <input type="safe-password" placeholder="请输入密码" bindinput="inputPassword" />
       </view>
       <view class="realNameBox">
         <view class="title">真实姓名</view>
-        <input type="text" placeholder="请输入真实姓名" />
+        <input type="text" placeholder="请输入真实姓名" bindinput="inputRealName" />
       </view>
       <view class="genderBox">
         <view class="title">性别</view>
@@ -27,16 +33,63 @@
       </view>
       <view class="idBox">
         <view class="title">证件号码</view>
-        <input type="text" placeholder="请输入证件号码" />
+        <input type="text" placeholder="请输入证件号码" bindinput="inputId" bindconfirm="idConfirm" />
+      </view>
+      <view class="birthBox">
+        <view class="title">生日</view>
+        <view class="content">{{birth}}</view>
       </view>
       <view class="phoneBox">
         <view class="title">联系电话</view>
-        <input type="number" placeholder="请输入联系电话" />
+        <input type="number" placeholder="请输入联系电话" bindinput="inputPhone" />
       </view>
       <view class="emailBox">
         <view class="title">电子邮箱</view>
-        <input type="text" placeholder="请输入电子邮箱" />
+        <input type="text" placeholder="请输入电子邮箱" bindinput="inputEmail" />
       </view>
     </view>
   </scroll-view>
+  <scroll-view wx:if="{{isVolunteer=='false'}}" class="info" scroll-y="true">
+    <view class="card">
+      <view class="avatarBox">
+        <view class="avatarContainer" bindtap="selectAvatar">
+          <image wx:if="{{avatarSrc!=null}}" src="{{avatarSrc}}" mode="aspectFill"></image>
+          <view wx:else>选择头像</view>
+        </view>
+      </view>
+      <view class="userNameBox">
+        <view class="title">组织名称</view>
+        <input type="text" placeholder="请输入组织名称" bindinput="inputName" />
+      </view>
+      <view class="passwordBox">
+        <view class="title">密码</view>
+        <input type="safe-password" placeholder="请输入密码" bindinput="inputPassword" />
+      </view>
+      <view class="realNameBox">
+        <view class="title">管理员真实姓名</view>
+        <input type="text" placeholder="请输入管理员真实姓名" bindinput="inputRealName" />
+      </view>
+      <view class="idTypeBox">
+        <view class="title">管理员身份证件类型</view>
+        <picker bindchange='idTypePicker' value='{{index}}' range='{{idTypeArray}}'>
+          <view class="content">{{idType}}</view>
+        </picker>
+      </view>
+      <view class="idBox">
+        <view class="title">管理员证件号码</view>
+        <input type="text" placeholder="请输入证件号码" bindinput="inputId" bindconfirm="idConfirm" />
+      </view>
+      <view class="phoneBox">
+        <view class="title">管理员联系电话</view>
+        <input type="number" placeholder="请输入管理员联系电话" bindinput="inputPhone" />
+      </view>
+      <view class="emailBox">
+        <view class="title">管理员电子邮箱</view>
+        <input type="text" placeholder="请输入管理员电子邮箱" bindinput="inputEmail" />
+      </view>
+    </view>
+  </scroll-view>
+  <view class="buttonView">
+    <button bindtap="signUp">注册</button>
+  </view>
 </view>

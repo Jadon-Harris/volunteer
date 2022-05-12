@@ -1,0 +1,108 @@
+.page {
+  background: linear-gradient(to bottom, #1296db, white);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24rpx;
+  margin-top: 24rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  width: auto;
+  background: rgba(255, 255, 255);
+  height: auto;
+  z-index: 998;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  font-size: 48rpx;
+  font-weight: 600;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.inputBox {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.usernameBox,
+.passwordBox {
+  display: flex;
+  width: 80%;
+  margin-top: 24rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  border-bottom: 2rpx solid #888;
+  align-items: center;
+}
+
+.usernameBox {
+  margin-top: 60rpx;
+}
+
+input {
+  display: flex;
+  color: #888;
+  height: 60rpx;
+  padding-left: 24rpx;
+  background-color: white;
+  border-radius: 12rpx;
+}
+
+.typeBox {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+}
+
+.typeItem {
+  margin-top: 40rpx;
+}
+
+.typeItem:first-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.typeItem:last-child {
+  display: flex;
+  flex-direction: row;
+  margin-left: 140rpx;
+}
+
+.signBox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.signupTitle {
+  color: #888;
+}
+
+.signup {
+  font-weight: 700;
+  color: #1296db;
+  padding-left: 8rpx;
+}
+
+button {
+  background-color: white;
+  color: #1296db;
+  border-radius: 24rpx;
+  margin-top: 40rpx;
+}

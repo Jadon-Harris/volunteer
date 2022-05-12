@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/volunteerServicePage/volunteerServicePage",
+    "pages/login/login",
     "pages/signup/signup",
     "pages/activity/activity",
     "pages/addActivity/addActivity",
@@ -12,12 +13,15 @@
     "pages/ex_sucess/ex_sucess",
     "pages/ex_fail/ex_fail",
     "pages/ex_history/ex_history",
-    "pages/zztest/zztest",
     "pages/usersManage/usersManage",
     "pages/orderList/orderList",
+<<<<<<< Updated upstream
     "pages/userInfo/userInfo",
     "pages/userList/userList",
     "pages/userDetail/userDetail"
+=======
+    "pages/zztest/zztest"
+>>>>>>> Stashed changes
   ],
   "tabBar": {
     "custom": false,
