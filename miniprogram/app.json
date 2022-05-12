@@ -7,7 +7,8 @@
     "pages/zztest/zztest",
     "pages/testPage/testPage",
     "pages/mine/mine",
-    "pages/orderlist/orderlist"
+    "pages/orderlist/orderlist",
+    "pages/usersManage/usersManage"
   ],
   "tabBar": {
     "custom": false,
@@ -27,7 +28,7 @@
         "iconPath": "images/tabBar/manage.png",
         "selectedIconPath": "images/tabBar/manage_HL.png",
         "text": "管理"
-      }
+      },
       {
         "pagePath": "pages/mine/mine",
         "iconPath": "images/tabBar/user.png",
